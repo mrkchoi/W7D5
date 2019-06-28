@@ -847,10 +847,12 @@ var SignUp = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
-      var that = this;
+      // let that = this;
       this.props.createNewUser(this.state).then(function () {
-        return that.props.history.push('/chirps');
+        return _this3.props.history.push('/chirps');
       });
     }
   }, {
