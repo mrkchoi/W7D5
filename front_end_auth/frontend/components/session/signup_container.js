@@ -7,4 +7,4 @@ const mapDispatchToProps = dispatch => ({
   createNewUser: formUser => dispatch(createNewUser(formUser))
 });
 
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(null, mapDispatchToProps)(Signup);

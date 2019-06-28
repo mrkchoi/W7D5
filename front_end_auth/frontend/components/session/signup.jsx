@@ -9,8 +9,8 @@ class SignUp extends React.Component {
       password: ''
     };
 
-    this.handleInput = this.handleInput.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(type) {
@@ -23,8 +23,11 @@ class SignUp extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let that = this;
     this.props.createNewUser(this.state)
-      .then(() => this.props.history.push('/chirps'));
+      .then(() => {
+        return that.props.history.push('/chirps');
+      });
   }
   
   render () {
@@ -32,23 +35,23 @@ class SignUp extends React.Component {
       <div className="session-form">
         <h2>Signup</h2>
         <form>
-          <label>Username
+          <label>Username: 
             <input 
               type="text" 
               value={this.state.username} 
               onChange={this.handleInput('username')}/>
           </label>
           <br/>
-          <label>Email
+          <label>Email: 
             <input 
-              type="email" 
+              type="text" 
               value={this.state.email} 
               onChange={this.handleInput('email')}/>
           </label>
           <br/>
-          <label>Password
+          <label>Password: 
             <input 
-              type="password" 
+              type="text" 
               value={this.state.password} 
               onChange={this.handleInput('password')}/>
           </label>
